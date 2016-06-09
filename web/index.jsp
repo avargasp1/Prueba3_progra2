@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>LOGIN</h1>
-        <form  method="post" action="Prueba3/Servlogin">
+        <form  method="post" action="principal.jsp">
             <table class="">
                 <tr>
                     <td>Usuario</td>
