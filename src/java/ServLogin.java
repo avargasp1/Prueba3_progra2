@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -31,18 +32,17 @@ public class ServLogin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            String username = request.getParameter("user");
-            String pass = request.getParameter("pass");
-
-            Usuario user = new Usuario();
             
-            if(request.getParameter("login") != null){
-                if (username.equals("admin") && pass.equals("admin")){
-                    response.sendRedirect("Prueba3/principal.jsp");
-                }else{
-                    response.sendRedirect("/Prueba3/index.jsp");
-                }
+            HttpSession sesion = request.getSession();
+            
+            String user, pass;
+            user = request.getParameter("user");
+            pass = request.getParameter("pass");
+            
+            if (user.equals("admin") && pass.equals("admin")){
+                response.sendRedirect("/Prueba3/principal.jsp");
+            }else{
+                response.sendRedirect("/Prueba3/index.jsp");
             }
 
         }

@@ -31,34 +31,39 @@ public class ServLenguaje_progra extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            if(request.getParameter("eliminar")!=null){
+            
+             Lenguajes_programacion lengu = new Lenguajes_programacion();
+            
+             if(request.getParameter("eliminar")!=null){
+
                 int id=Integer.parseInt(request.getParameter("eliminar"));
-                Lenguajes_programacion lengu = new Lenguajes_programacion();
+                lengu.setLenguaje_id(id);
+                lengu.delete();
+                response.sendRedirect("/Prueba3/lenguaje_programacion/index.jsp");
                 
-                response.sendRedirect("/Prueba3/sistema_operativo/index.jsp");
-              
-           }if(request.getParameter("guardar").equals("1")){
-                String chip =request.getParameter("chip");
+           }if(request.getParameter("guardar")!= null){
+                String nombre =request.getParameter("chip");
                 String fecha_creacion = request.getParameter("fecha");
-                int numero = Integer.parseInt(request.getParameter("numero"));
-                int sistema_id = Integer.parseInt(request.getParameter("sistema_id"));
-                //out.println(chip +" "+ fecha_creacion +" "+ numero+" "+ sistema_id);
-                String creador = request.getParameter("creador");
-                out.println(creador);
+                
+                lengu.setNombre(nombre);
+                lengu.setFecha_creacion(fecha_creacion);
+                lengu.insert();
                 
                 
-                response.sendRedirect("/Prueba3/celular/index.jsp");
+                response.sendRedirect("/Prueba3/lenguaje_programacion/index.jsp");
                
-           }if(request.getParameter("editar").equals("1")){
-                int celular_id = Integer.parseInt(request.getParameter("celular_id"));
-                String chip =request.getParameter("chip");
-                String fecha_creacion = request.getParameter("fecha");
-                int numero = Integer.parseInt(request.getParameter("numero"));
-                int sistema_id = Integer.parseInt(request.getParameter("sistema_id"));
-                String creador = request.getParameter("creador");
-               
+           }if(request.getParameter("editar") != null){
+               int id = Integer.parseInt(request.getParameter("lenguaje_id"));
+               String nombre =request.getParameter("chip");
+               String fecha_creacion = request.getParameter("fecha");
                 
-                response.sendRedirect("/Prueba3/celular/index.jsp");
+                lengu.setLenguaje_id(id);
+                lengu.setNombre(nombre);
+                lengu.setFecha_creacion(fecha_creacion);
+                lengu.update();
+
+                response.sendRedirect("/Prueba3/lenguaje_programacion/index.jsp");
+
            }
         }
     }

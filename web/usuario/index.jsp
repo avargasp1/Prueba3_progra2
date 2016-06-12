@@ -10,9 +10,23 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Prueba 3 - Programacion 2</title>
+        <link rel="stylesheet" type="text/css" href="../template/calendar/tcal.css" />
+	<script type="text/javascript" src="../template/calendar/tcal.js"></script>
+        <link rel="stylesheet" type="text/css" href="../template/css/bootstrap.min.css" />
+        <script src="../template/js/bootstrap.min.js"></script>
     </head>
     <body>
+        <div class="navbar-header">
+            <ul>
+                <li><a href="index.jsp">Usuarios</a> </li>
+                <li><a href="../celular/index.jsp">Celulares</a> </li>
+                <li><a href="../sistema_operativo/index.jsp">Sistemas Operativos</a> </li>
+                <li><a href="../lenguaje_programacion/index.jsp">Lenguajes de Programacion</a> </li>
+            </ul>
+        </div>
+        <br>
+        
         <h1>Usuarios</h1>
         <br>
         
@@ -39,7 +53,7 @@
         </form>
              
         <h3>lista</h3>
-        <table>
+        <table class="table" class="table-striped">
             <thead>
                 <th>ID</th>
                 <th>NOMBRE</th>
@@ -61,11 +75,6 @@
             </tbody>
         </table>
             
-            <ul>
-            <li><a href="index.jsp">Usuarios</a> </li>
-            <li><a href="../celular/index.jsp">Celulares</a> </li>
-            <li><a href="">Sistemas Operativos</a> </li>
-            <li><a href="">Lenguajes de Programacion</a> </li>
-        </ul>
+            
     </body>
 </html>

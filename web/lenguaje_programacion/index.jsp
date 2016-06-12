@@ -10,12 +10,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Prueba 3 - Programacion 2</title>
+        <link rel="stylesheet" type="text/css" href="../template/calendar/tcal.css" />
+	<script type="text/javascript" src="../template/calendar/tcal.js"></script>
+        <link rel="stylesheet" type="text/css" href="../template/css/bootstrap.min.css" />
+        <script src="../template/js/bootstrap.min.js"></script>
     </head>
     <body>
+        <ul>
+            <li><a href="../usuario/index.jsp">Usuarios</a> </li>
+            <li><a href="../celular/index.jsp">Celulares</a> </li>
+            <li><a href="../sistema_operativo/index.jsp">Sistemas Operativos</a> </li>
+            <li><a href="index.jsp">Lenguajes de Programacion</a> </li>
+        </ul>
         <h1>Lenguajes de Programacion</h1>
         <br>
-        
+
         <a href="crear.jsp">CREAR UN LENGUAJE DE PROGRAMACION</a>
         <br>
         <form method="post" action="index.jsp">
@@ -23,7 +33,7 @@
             <input type="submit" name="buscarNombre" value="Buscar">
             <%
                 Conexion con = new Conexion();
-                
+
                 if (request.getParameter("buscarNombre") != null) {
                     if (request.getParameter("buscarNombre").isEmpty()) {
 
@@ -37,36 +47,31 @@
                 }
             %>
         </form>
-             
+
         <h3>lista</h3>
         <table>
             <thead>
-                <th>ID:</th>
-                <th>NOMBRE:</th>
-                <th>FECHA DE CREACION:</th>
-                
-            </thead>
-            <tbody>
-                <%
-                    while(con.getResult().next()){
-                        out.println("<tr>");
-                        out.println("<td>"+con.getResult().getString("lenguaje_id")+"</td>");
-                        out.println("<td>"+con.getResult().getString("nombre")+"</td>");
-                        out.println("<td>"+con.getResult().getString("fecha_creacion")+"</td>");
+            <th>ID:</th>
+            <th>NOMBRE:</th>
+            <th>FECHA DE CREACION:</th>
 
-                        out.println("<td>" + "<a href='/Prueba3/ServLenguaje_programacion?eliminar=" + con.getResult().getString("lenguaje_id") + "'>Eliminar</a>" + "</td>");
-                        out.println("<td>" + "<a href='/Prueba3/lenguaje_programacion/editar.jsp?lenguaje_id=" + con.getResult().getString("lenguaje_id") + "'>Editar</a>" + "</td>");
-                        out.println("</tr>");
-                    }
-                %>
-            </tbody>
-        </table>
-            
-            <ul>
-            <li><a href="../usuarios/index.jsp">Usuarios</a> </li>
-            <li><a href="../celular/index.jsp">Celulares</a> </li>
-            <li><a href="../sistema_operativo/index.jsp">Sistemas Operativos</a> </li>
-            <li><a href="index.jsp">Lenguajes de Programacion</a> </li>
-        </ul>
-    </body>
+        </thead>
+        <tbody>
+            <%
+                while (con.getResult().next()) {
+                    out.println("<tr>");
+                    out.println("<td>" + con.getResult().getString("lenguaje_id") + "</td>");
+                    out.println("<td>" + con.getResult().getString("nombre") + "</td>");
+                    out.println("<td>" + con.getResult().getString("fecha_creacion") + "</td>");
+
+                    out.println("<td>" + "<a href='/Prueba3/ServLenguaje_programacion?eliminar=" + con.getResult().getString("lenguaje_id") + "'>Eliminar</a>" + "</td>");
+                    out.println("<td>" + "<a href='/Prueba3/lenguaje_programacion/editar.jsp?lenguaje_id=" + con.getResult().getString("lenguaje_id") + "'>Editar</a>" + "</td>");
+                    out.println("</tr>");
+                }
+            %>
+        </tbody>
+    </table>
+
+
+</body>
 </html>

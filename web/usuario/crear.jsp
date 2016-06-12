@@ -9,15 +9,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Prueba 3 - Programacion 2</title>
+        <link rel="stylesheet" type="text/css" href="../template/calendar/tcal.css" />
+	<script type="text/javascript" src="../template/calendar/tcal.js"></script>
+        <link rel="stylesheet" type="text/css" href="../template/css/bootstrap.min.css" />
+        <script src="../template/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <ul>
-            <li><a href="index.jsp">Usuarios</a> </li>
-            <li><a href="../celular/index.jsp">Celulares</a> </li>
-            <li><a href="">Sistemas Operativos</a> </li>
-            <li><a href="">Lenguajes de Programacion</a> </li>
-        </ul>
+        <div class="navbar-header">
+            <ul>
+                <li><a href="index.jsp">Usuarios</a> </li>
+                <li><a href="../celular/index.jsp">Celulares</a> </li>
+                <li><a href="../sistema_operativo/index.jsp">Sistemas Operativos</a> </li>
+                <li><a href="../lenguaje_programacion/index.jsp">Lenguajes de Programacion</a> </li>
+            </ul>
         <h1>CREAR</h1>
         
         <form method="post" action="/Prueba3/ServCelular">
@@ -32,8 +37,8 @@
                 </tr>
                 
             </table> 
-            <input type="hidden" value="1" name="guardar">
-            <input type="submit" value="Guardar">
+            
+            <input type="submit" name="guardar" value="Guardar">
         </form>
             
        

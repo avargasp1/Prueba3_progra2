@@ -11,17 +11,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Prueba 3 - Programacion 2</title>
         <link rel="stylesheet" type="text/css" href="../template/calendar/tcal.css" />
 	<script type="text/javascript" src="../template/calendar/tcal.js"></script>
-        <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../template/css/bootstrap.min.css" />
+        <script src="../template/js/bootstrap.min.js"></script>
+	
     </head>
     <body>
         <ul>
-            <li><a href="">Usuarios</a> </li>
+            <li><a href="../usuario/index.jsp">Usuarios</a> </li>
             <li><a href="index.jsp">Celulares</a> </li>
-            <li><a href="">Sistemas Operativos</a> </li>
-            <li><a href="">Lenguajes de Programacion</a> </li>
+            <li><a href="../sistema_operativo/index.jsp">Sistemas Operativos</a> </li>
+            <li><a href="../lenguajes_programacion/index.jsp">Lenguajes de Programacion</a> </li>
         </ul>
         
         <form method="post" action="/Prueba3/ServCelular">

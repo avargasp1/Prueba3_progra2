@@ -38,26 +38,29 @@ public class ServSistema_Op extends HttpServlet {
                 
                 response.sendRedirect("/Prueba3/sistema_operativo/index.jsp");
               
-           }if(request.getParameter("guardar").equals("1")){
-                String chip =request.getParameter("chip");
-                String fecha_creacion = request.getParameter("fecha");
-                int numero = Integer.parseInt(request.getParameter("numero"));
-                int sistema_id = Integer.parseInt(request.getParameter("sistema_id"));
-                //out.println(chip +" "+ fecha_creacion +" "+ numero+" "+ sistema_id);
-                String creador = request.getParameter("creador");
-                out.println(creador);
+           }if(request.getParameter("guardar")!=null){
+                String nombre =request.getParameter("nombre");
+                String fecha_creacion = request.getParameter("fecha_creacion");
+                int lenguaje_id = Integer.parseInt(request.getParameter("lenguaje_id"));
                 
+                sis.setNombre(nombre);
+                sis.setFecha_creacion(fecha_creacion);
+                sis.setLenguaje_id(lenguaje_id);
+                sis.insert();
                 
                 response.sendRedirect("/Prueba3/celular/index.jsp");
                
-           }if(request.getParameter("editar").equals("1")){
-                int celular_id = Integer.parseInt(request.getParameter("celular_id"));
-                String chip =request.getParameter("chip");
-                String fecha_creacion = request.getParameter("fecha");
-                int numero = Integer.parseInt(request.getParameter("numero"));
-                int sistema_id = Integer.parseInt(request.getParameter("sistema_id"));
-                String creador = request.getParameter("creador");
-               
+           }if(request.getParameter("editar")!=null){
+                String nombre =request.getParameter("nombre");
+                String fecha_creacion = request.getParameter("fecha_creacion");
+                int lenguaje_id = Integer.parseInt(request.getParameter("lenguaje_id"));
+                int id = Integer.parseInt(request.getParameter("sistema_id"));
+                
+                sis.setSistema_id(id);
+                sis.setNombre(nombre);
+                sis.setFecha_creacion(fecha_creacion);
+                sis.setLenguaje_id(lenguaje_id);
+                sis.update();
                 
                 response.sendRedirect("/Prueba3/celular/index.jsp");
            }

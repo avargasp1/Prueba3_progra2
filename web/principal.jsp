@@ -9,8 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+        <title>Prueba 3 - Programacion 2</title>
+        <link rel="stylesheet" type="text/css" href="template/calendar/tcal.css" />
+	<script type="text/javascript" src="template/calendar/tcal.js"></script>
+        <link rel="stylesheet" type="text/css" href="template/css/bootstrap.min.css" />
+        <script src="template/js/bootstrap.min.js"></script>
     </head>
     <body>
         <h2>MENU</h2>

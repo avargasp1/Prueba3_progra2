@@ -34,14 +34,14 @@ public class ServUsuario extends HttpServlet {
             Usuario user = new Usuario();
             
             if(request.getParameter("eliminar")!=null){
-               int id=Integer.parseInt(request.getParameter("eliminar"));
                
+               int id=Integer.parseInt(request.getParameter("eliminar"));
                user.setUsuario_id(id);
                user.delete();
                
                response.sendRedirect("/Prueba3/usuario/index.jsp");
                
-           }if(request.getParameter("guardar").equals("1")){
+           }if(request.getParameter("guardar")!=null){
                 String nombre =request.getParameter("nombre");
                 String clave = request.getParameter("clave");
                 
@@ -51,7 +51,7 @@ public class ServUsuario extends HttpServlet {
 
                response.sendRedirect("/Prueba3/usuario/index.jsp");
                
-           }if(request.getParameter("editar").equals("1") ){
+           }if(request.getParameter("editar")!=null ){
                 String nombre =request.getParameter("nombre");
                 String clave= request.getParameter("clave");
                 int usuario_id = Integer.parseInt(request.getParameter("usuario_id"));
