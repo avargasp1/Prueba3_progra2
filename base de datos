@@ -1,13 +1,29 @@
 # Prueba3_progra2
 
-create table Usuarios(usuario_id int(10) primary key not null
-auto_increment,nombre varchar (25),clave varchar(25),estado varchar(25));
+create table Usuarios(
+usuario_id int(10) primary key not null auto_increment,
+nombre varchar (25),
+clave varchar(25),
+estado varchar(25));
 
-create table celulares( celular_id int (10) primary key not nu
-ll auto_increment, tipo_chip varchar (10),fecha_creacion date, numero int (10),
-sistema_id int (10),estado varchar (10),creado_por varchar (25));
+create table celulares( 
+celular_id int (10) primary key not null auto_increment, 
+tipo_chip varchar (10),
+fecha_creacion date, 
+numero int (10),
+sistema_id int (10),
+estado varchar (10),
+creado_por varchar (25));
 
-create table sistemas_operativos( sistema_id int (10) primary key not null auto_increment,nombre varchar (25), fecha_creacion date, estado varchar (25), lenguaje_id int (10));
+create table sistemas_operativos( 
+sistema_id int (10) primary key not null auto_increment,
+nombre varchar (25), 
+fecha_creacion date, 
+estado varchar (25), 
+lenguaje_id int (10));
 
-create table lenguajes_programacion(lenguaje_id int(10) primary key not null auto_increment,
-nombre varchar(25), fecha_creacion date, estado varchar (25));
+create table lenguajes_programacion(
+lenguaje_id int(10) primary key not null auto_increment,
+nombre varchar(25), 
+fecha_creacion date, 
+estado varchar (25));
